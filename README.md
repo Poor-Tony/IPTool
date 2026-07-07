@@ -2,13 +2,39 @@
 
 IPTool is a small terminal UI for applying preconfigured IPv4 settings to Windows network adapters.
 
+It does not install Python and does not need Python.
+
 ## Run
 
+No Python installation is required. IPTool is implemented as a PowerShell script for Windows.
+
+From this repository:
+
 ```powershell
-python iptool.py
+.\iptool.cmd
 ```
 
 Changing adapter settings requires an elevated terminal on Windows.
+
+## Install
+
+Run:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\install.ps1
+```
+
+The installer copies `iptool.ps1` and `iptool.cmd` to:
+
+```text
+%LOCALAPPDATA%\IPTool\bin
+```
+
+It then adds that directory to the current user's `PATH`. Open a new terminal after installation, then run IPTool from any working directory with:
+
+```powershell
+iptool
+```
 
 ## How it works
 
